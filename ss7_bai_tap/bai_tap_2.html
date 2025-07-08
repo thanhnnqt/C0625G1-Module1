@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng dụng máy tính</title>
+</head>
+<body>
+<h2>Caculator</h2>
+<input id="a">
+<input id="b" style="margin-bottom: 10px"><br>
+<button onclick="cong()">Addition(+)</button>
+<button onclick="tru()">Subtraction(-)</button>
+<button onclick="nhan()">Multiplication(X)</button>
+<button onclick="chia()">Division(/)</button>
+<br>
+<p id="run">Result</p>
+<script>
+    function cong() {
+        let a = +document.getElementById('a').value
+        let b = +document.getElementById('b').value
+        let tinhCong = a + b;
+        document.getElementById("run").innerText = "Result Addition = " + tinhCong;
+    }
+
+    function tru() {
+        let a = +document.getElementById('a').value
+        let b = +document.getElementById('b').value
+        let tinhTru = a - b;
+        document.getElementById("run").innerText = "Result Subtraction = " + tinhTru;
+    }
+
+    function nhan() {
+        let a = +document.getElementById('a').value
+        let b = +document.getElementById('b').value
+        let tinhNhan = a * b;
+        document.getElementById("run").innerText = "Result Multiplication = " + tinhNhan;
+    }
+
+    function chia() {
+        let a = +document.getElementById('a').value
+        let b = +document.getElementById('b').value
+        let tinhChia = a / b;
+        document.getElementById("run").innerText = "Result Division = " + tinhChia;
+    }
+</script>
+</body>
+</html>

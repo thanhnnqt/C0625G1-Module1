@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển đổi tiền tệ</title>
+</head>
+<body>
+<label style="margin-left: 60px">Amount</label>
+<label style="margin-left: 110px">From Currency</label>
+<label style="margin-left: 70px">To Currency</label><br>
+<input id="a">
+<select id="FromCurrency" style="width: 120px; margin-left: 50px">
+    <option value="26000">VND</option>
+    <option value="146">YEN</option>
+    <option value="1">USD</option>
+</select>
+<select id="ToCurrency" style="width: 120px; margin-left: 50px">
+    <option value="26000">VND</option>
+    <option value="146">YEN</option>
+    <option value="1">USD</option>
+</select>
+<button onclick="doi()" ; style="margin-top: 10px; margin-left: 30px">Convert</button>
+<br>
+<p id="run">Result</p><br>
+<script>
+    let nhapTien = document.getElementById("a");
+    let tienCanDoi = document.getElementById("FromCurrency");
+    let tienKetQua = document.getElementById("ToCurrency");
+
+    function doi() {
+        let total = nhapTien.value * tienKetQua.value / tienCanDoi.value
+        document.getElementById("run").innerText = "Result: " + total + tienKetQua.options[tienKetQua.selectedIndex].text;
+    }
+</script>
+</body>
+</html>
