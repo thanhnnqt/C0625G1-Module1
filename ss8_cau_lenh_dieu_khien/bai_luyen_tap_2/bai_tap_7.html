@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 7</title>
+</head>
+<body>
+<script>
+    let a = +prompt("Nhập giá trị a");
+    let b = +prompt("Nhập giá trị b");
+    let c = +prompt("Nhập giá trị c");
+    let delta = (b * b) - 4 * a * c;
+    if (a != 0) {
+        if (delta < 0) {
+            alert(`Phương trình vô nghiệm`);
+        } else if (delta == 0) {
+            let x = -b / (2 * a);
+            alert(`Nghiệm của phương trình bậc 2: ax^2+bx+c=0 là nghiệm kép x=${x}`)
+        } else {
+            let x1 = (-b - Math.sqrt(delta)) / (2 * a);
+            let x2 = (-b + Math.sqrt(delta)) / (2 * a);
+            alert(`Nghiệm của phương trình bậc 2: ax^2+bx+c=0 là x1=${x1} và x2=${x2}`);
+        }
+    } else {
+        alert("Không phải phương trình bậc 2")
+    }
+</script>
+</body>
+</html>
