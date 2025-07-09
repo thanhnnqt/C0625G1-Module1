@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 3</title>
+</head>
+<body>
+<table>
+  <tr>
+    <td colspan="4"><input type="text" id="phepTinh"></td>
+  </tr>
+  <tr>
+    <td><button onclick="nhap(this.value)" value="1">1</button></td>
+    <td><button onclick="nhap(this.value)" value="2">2</button></td>
+    <td><button onclick="nhap(this.value)" value="3">3</button></td>
+    <td><button onclick="nhap(this.value)" value="+">+</button></td>
+  </tr>
+  <tr>
+    <td><button onclick="nhap(this.value)" value="4">4</button></td>
+    <td><button onclick="nhap(this.value)" value="5">5</button></td>
+    <td><button onclick="nhap(this.value)" value="6">6</button></td>
+    <td><button onclick="nhap(this.value)" value="-">-</button></td>
+  </tr>
+  <tr>
+    <td><button onclick="nhap(this.value)" value="7">7</button></td>
+    <td><button onclick="nhap(this.value)" value="8">8</button></td>
+    <td><button onclick="nhap(this.value)" value="9">9</button></td>
+    <td><button onclick="nhap(this.value)" value="*">x</button></td>
+  </tr>
+  <tr>
+    <td><button onclick="xoa()">C</button></td>
+    <td><button onclick="nhap(this.value)">0</button></td>
+    <td><button onclick="tinhToan()">=</button></td>
+    <td><button onclick="nhap(this.value)">/</button></td>
+  </tr>
+  <script>
+      let view = document.getElementById("phepTinh")
+      function nhap(value) {
+        view.value += value;
+      }
+      function tinhToan() {
+        let result = eval(view.value);
+        view.value = result;
+      }
+      function xoa() {
+        view.value = "";
+      }
+  </script>
+</table>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1</title>
+</head>
+<body>
+<script>
+  let weight = +prompt("Nhập cân nặng (kg)");
+  let height = +prompt("Nhập chiều cao (m)");
+  let BMI = 0;
+  BMI = weight / (height*height);
+  if (BMI < 18.5){
+    alert(`BMI = ${BMI}; Chỉ số sức khỏe loại Underweight`);
+  }else if (BMI<25){
+    alert(`BMI = ${BMI}; Chỉ số sức khỏe loại Nomal`);
+  }else if (BMI<30){
+    alert(`BMI = ${BMI}; Chỉ số sức khỏe loại Overweight`);
+  }else {
+    alert(`BMI = ${BMI}; Chỉ số sức khỏe loại Obese`)
+  }
+</script>
+</body>
+</html>

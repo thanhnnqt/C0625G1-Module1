@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 5</title>
+</head>
+<body>
+<script>//bài 5
+    let kiemTra = +prompt("Nhập điểm kiểm tra")
+    let giuaKy = +prompt("Nhập điểm thi giữa kỳ")
+    let cuoiKy = +prompt("Nhập điểm cuối kỳ")
+    let diemTong = (kiemTra+giuaKy+cuoiKy)/3
+    if (diemTong >= 80){
+        alert("Xếp loại giỏi")
+    }else if (diemTong >= 70) {
+        alert("Xếp loại khá")
+    }else if (diemTong >= 50) {
+        alert("Xếp loại trung bình")
+    }else {
+        alert("Xếp loại yếu")
+    }
+</script>
+</body>
+</html>
