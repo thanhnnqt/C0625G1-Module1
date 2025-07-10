@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính chu vi và diện tích</title>
+</head>
+<body>
+<h3 style="margin-left: 60px">Tính chu vi và diện tích</h3>
+<label for name="a" ; style="margin-left: 13px">Nhập cạnh dài: a = </label>
+<input id="a"><br>
+<label for name="b">Nhập cạnh ngắn: b = </label>
+<input id="b" ; style="margin-top: 10px"><br>
+<button onclick="tinhCV()" ; style="margin-left: 130px; margin-top: 10px">Tính Chu vi</button>
+<button onclick="tinhDT()">Tính Diện tích</button>
+<p id="run">Kết quả</p><br>
+<script>
+    function tinhCV() {
+        let a = +document.getElementById('a').value;
+        let b = +document.getElementById('b').value;
+        let ChuVi = (a + b) * 2;
+        document.getElementById("run").innerText = "Chu vi hình nhữ nhật = " + ChuVi;
+    }
+
+    function tinhDT() {
+        let a = +document.getElementById('a').value;
+        let b = +document.getElementById('b').value;
+        let Dientich = (a * b);
+        document.getElementById("run").innerText = "Diện tích hình nhữ nhật = " + Dientich;
+    }
+</script>
+</body>
+</html>

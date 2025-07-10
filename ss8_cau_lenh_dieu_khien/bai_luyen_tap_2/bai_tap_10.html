@@ -6,7 +6,21 @@
 </head>
 <body>
 <script>
-
+    let soDien = +prompt("Nhập số điện đã dùng");
+    let total = 0;
+    if (soDien>=200) {
+        total = soDien * 3000;
+        alert(`Tiền điện cần phải đóng là ${total} VND`);
+    }else if (soDien>=100) {
+        total = soDien * 3500;
+        alert(`Tiền điện cần phải đóng là ${total} VND`);
+    }else if (soDien>=50) {
+        total = soDien * 4000;
+        alert(`Tiền điện cần phải đóng là ${total} VND`);
+    }else {
+        total = soDien * 4500;
+        alert(`Tiền điện cần phải đóng là ${total} VND`);
+    }
 </script>
 </body>
 </html>
