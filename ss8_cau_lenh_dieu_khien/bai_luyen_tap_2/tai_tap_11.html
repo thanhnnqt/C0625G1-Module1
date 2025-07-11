@@ -6,30 +6,30 @@
 </head>
 <body>
 <script>
-  let thuNhap = +prompt("Nhập số tiền thu nhập cá nhân/tháng (triệu)");
-  let thue = 0;
-  if (thuNhap<=5) {
-      thue = thuNhap * 0.05;
-      alert(`Thuế cần phải đóng là ${thue} triệu VND`);
-  }else if (thuNhap<=10) {
-      thue = thuNhap * 0.1 + 0.25;
-      alert(`Thuế cần phải đóng là ${thue} triệu VND`);
-  }else if (thuNhap<=18) {
-      thue = thuNhap * 0.15 + 0.75;
-      alert(`Thuế cần phải đóng là ${thue} triệu VND`);
-  }else if (thuNhap<=32) {
-      thue = thuNhap * 0.2 + 1.65;
-      alert(`Thuế cần phải đóng là ${thue} triệu VND`);
-  }else if (thuNhap<=52) {
-      thue = thuNhap * 0.25 + 3.25;
-      alert(`Thuế cần phải đóng là ${thue} triệu VND`);
-  }else if (thuNhap<=80) {
-      thue = thuNhap * 0.30 + 5.85;
-      alert(`Thuế cần phải đóng là ${thue} triệu VND`);
-  }else {
-      thue = thuNhap * 0.35 + 9.85;
-      alert(`Thuế cần phải đóng là ${thue} triệu VND`);
-  }
+    let thuNhap = +prompt("Nhập số tiền thu nhập cá nhân/tháng (triệu)");
+    let thue = 0;
+    if (thuNhap <= 5) {
+        thue = thuNhap * 0.05;
+        alert(`Thuế cần phải đóng là ${thue} triệu VND`);
+    } else if (thuNhap <= 10) {
+        thue = thuNhap * 0.1 + 0.25;
+        alert(`Thuế cần phải đóng là ${thue} triệu VND`);
+    } else if (thuNhap <= 18) {
+        thue = thuNhap * 0.15 + 0.75;
+        alert(`Thuế cần phải đóng là ${thue} triệu VND`);
+    } else if (thuNhap <= 32) {
+        thue = thuNhap * 0.2 + 1.65;
+        alert(`Thuế cần phải đóng là ${thue} triệu VND`);
+    } else if (thuNhap <= 52) {
+        thue = thuNhap * 0.25 + 3.25;
+        alert(`Thuế cần phải đóng là ${thue} triệu VND`);
+    } else if (thuNhap <= 80) {
+        thue = thuNhap * 0.30 + 5.85;
+        alert(`Thuế cần phải đóng là ${thue} triệu VND`);
+    } else {
+        thue = thuNhap * 0.35 + 9.85;
+        alert(`Thuế cần phải đóng là ${thue} triệu VND`);
+    }
 </script>
 </body>
 </html>

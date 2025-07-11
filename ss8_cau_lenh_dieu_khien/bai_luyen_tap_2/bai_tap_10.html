@@ -7,19 +7,19 @@
 <body>
 <script>
     let soDien = +prompt("Nhập số điện đã dùng");
-    let total = 0;
-    if (soDien>=200) {
-        total = soDien * 3000;
-        alert(`Tiền điện cần phải đóng là ${total} VND`);
-    }else if (soDien>=100) {
-        total = soDien * 3500;
-        alert(`Tiền điện cần phải đóng là ${total} VND`);
-    }else if (soDien>=50) {
-        total = soDien * 4000;
-        alert(`Tiền điện cần phải đóng là ${total} VND`);
-    }else {
-        total = soDien * 4500;
-        alert(`Tiền điện cần phải đóng là ${total} VND`);
+    let tong = 0;
+    if (soDien >= 200) {
+        tong = soDien * 3000;
+        alert(`Tiền điện cần phải đóng là ${tong} VND`);
+    } else if (soDien >= 100) {
+        tong = soDien * 3500;
+        alert(`Tiền điện cần phải đóng là ${tong} VND`);
+    } else if (soDien >= 50) {
+        tong = soDien * 4000;
+        alert(`Tiền điện cần phải đóng là ${tong} VND`);
+    } else {
+        tong = soDien * 4500;
+        alert(`Tiền điện cần phải đóng là ${tong} VND`);
     }
 </script>
 </body>
