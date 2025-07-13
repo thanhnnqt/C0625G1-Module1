@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 6</title>
+</head>
+<body>
+<script>
+    let thuTu = 0;
+    let tong = 0;
+    let soTuNhien = 1;
+    while (thuTu < 30) {
+        if (soTuNhien % 7 === 0) {
+            tong += soTuNhien;
+            thuTu++;
+        }
+        soTuNhien++;
+    }
+    document.write(tong);
+</script>
+</body>
+</html>

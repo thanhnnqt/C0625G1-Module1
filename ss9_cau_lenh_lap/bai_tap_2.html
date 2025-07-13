@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2</title>
+</head>
+<body>
+<script>
+    let soLuong = 20;
+    let soNguyenTo = 2;
+    let soSNT = 0;
+    while (soSNT < soLuong) {
+        let dieuKien = 0;
+        for (let mauSo = 2; mauSo < soNguyenTo; mauSo++) {
+            if (soNguyenTo % mauSo == 0) {
+                dieuKien++;
+            }
+        }
+        if (dieuKien == 0) {
+            document.write(soNguyenTo + "<br>");
+            soSNT++;
+        }
+        soNguyenTo++;
+    }
+</script>
+</body>
+</html>

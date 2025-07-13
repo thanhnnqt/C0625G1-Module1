@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1</title>
+</head>
+<body>
+<table border="1" style="border-collapse: collapse">
+<script>
+    for (let row = 1; row <= 9; row++) {
+        document.write("<tr>");
+        for (let col = 2; col <= 9; col++) {
+            document.write(`<td>${col} * ${row} = ${col * row}</td>`)
+        }
+        document.write("<tr>")
+    }
+</script>
+</table>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 4</title>
+</head>
+<body>
+<script>
+    let n = +prompt("Nhập số lượng n");
+    let j = 0;
+    let a = 0;
+    let b = 1;
+    while (j < n) {
+        let c = b + a;
+        a = b;
+        b = c;
+        j++;
+        if (a % 5 == 0) {
+            alert(`Số đầu tiên trong dãy fibonacci chia hết cho 5 là ${a}`);
+            break;
+        }
+    }
+</script>
+</body>
+</html>
