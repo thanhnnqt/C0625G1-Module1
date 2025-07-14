@@ -5,6 +5,32 @@
     <title>Bài 8</title>
 </head>
 <body>
-<button>Bắt đầu</button>
+<button onclick="batDau()">Bắt đầu trò chơi</button>
+<script>
+    function batDau() {
+        let nhapKhoang = +prompt("Nhập khoảng các số muốn đoán");
+        let nhapSo = +prompt("Nhập số bạn đoán");
+        let ngauNhien = (Math.floor(Math.random() * (nhapKhoang + 1)));
+        let dieuKien = 1;
+        console.log(ngauNhien);
+        while (nhapSo !== ngauNhien) {
+            if (nhapSo < ngauNhien) {
+                alert("Số bạn đoán bé hơn");
+                nhapSo = +prompt("Nhập lại");
+            } else if (nhapSo > ngauNhien) {
+                alert("Số bạn đoán lớn hơn");
+                nhapSo = +prompt("Nhập lại");
+            }
+            dieuKien++;
+            if (dieuKien === 3 && nhapSo !== ngauNhien) {
+                alert("Bạn đã hết lượt đoán");
+                break;
+            }
+            if (nhapSo === ngauNhien) {
+                alert("Chúc mừng bạn đã đoán đúng");
+            }
+        }
+    }
+</script>
 </body>
 </html>

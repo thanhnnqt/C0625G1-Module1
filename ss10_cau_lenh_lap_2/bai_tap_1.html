@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1</title>
+</head>
+<body>
+<script>
+    let dieuKien = true;
+    while (dieuKien) {
+        let nhap = +prompt("----Quản lý sinh viên---- \n 1. Hiển thị danh sách sinh viên \n 2. Thêm sinh viên mới \n 3. Xóa sinh viên \n 4. Kết thúc chương trình");
+        switch (nhap) {
+            case 1:
+                alert("Danh sách không ở đây");
+                break;
+            case 2:
+                alert("Thêm sinh viên mới vào đây");
+                break;
+            case 3:
+                alert("Xóa sinh viên ở đây");
+                break;
+            case 4:
+                if (confirm("Bạn có muốn kết thúc chương trình không")){
+                    dieuKien = false;
+                }
+                break;
+            default:
+        }
+    }
+</script>
+</body>
+</html>

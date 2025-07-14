@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 5</title>
+</head>
+<body>
+<script>
+    let soTienVay = +prompt("Nhập số tiền cần vay");
+    let soThang = +prompt("Nhập số tháng muốn gửi lãi");
+    let laiXuat = +prompt("Nhập số lãi xuất 1 tháng") / 100;
+    let tienPhaiTra = 0;
+    let laiXuatThang = 1;
+    for (let i = 0; i < soThang; i++) {
+        laiXuatThang *= (1 + laiXuat);
+    }
+    tienPhaiTra = soTienVay * laiXuatThang;
+    alert(`Tổng tiền phải trả trong ${soThang} tháng là ${tienPhaiTra}`);
+</script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2</title>
+</head>
+<body>
+<button onclick="nhanMenu()">Menu</button>
+<script>
+    function nhanMenu() {
+        let dieuKien = true;
+        let tong = 0;
+        let danhSach = "";
+        let cafeDaChon = false;
+        let caCaoDaChon = false;
+        let nuocCamDaChon = false;
+        let soLuongCafe = 0;
+        while (dieuKien) {
+            let menu = +prompt(`-----Menu----- \n Hãy nhập số để chọn đồ uống \n 1. Cafe: 10k \n 2. Ca cao: 15k \n 3. Nước cam 20k \n 4. Kết thúc
+            \n -----Danh sách đã chọn----- ${danhSach}  \n Tổng tiền: ${tong}`);
+            switch (menu) {
+                case 1:
+                    tong += 10000;
+                    soLuongCafe++;
+                    if (!cafeDaChon) {
+                        danhSach += `\n Cafe`;
+                        cafeDaChon = true;
+                    }
+                    break;
+                case 2:
+                    tong += 15000;
+                    if (!caCaoDaChon) {
+                        danhSach += `\n Ca cao`;
+                        caCaoDaChon = true;
+                    }
+                    break;
+                case 3:
+                    tong += 20000;
+                    if (!nuocCamDaChon) {
+                        danhSach += `\n Nước cam`;
+                        nuocCamDaChon = true;
+                    }
+                    break;
+                case 4:
+                    if (confirm(`Danh sách chọn là ${danhSach} \n Tiền cần thanh toán là ${tong} VND`)) {
+                        dieuKien = false;
+                    }
+                    break;
+                default:
+            }
+        }
+    }
+</script>
+</body>
+</html>
