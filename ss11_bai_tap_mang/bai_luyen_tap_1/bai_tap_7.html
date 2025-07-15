@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 7</title>
+</head>
+<body>
+<script>
+    let n = [10, 22, 13, 54, 65];
+    let b = +prompt("Nhập số V");
+    for (let i = 0; i < n.length; i++) {
+        if (b === n[i]) {
+            n.splice(i, 1);
+            n.push(0);
+            break;
+        }
+    }
+    alert(n);
+</script>
+</body>
+</html>

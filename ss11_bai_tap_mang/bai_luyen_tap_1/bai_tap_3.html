@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 3</title>
+</head>
+<body>
+<script>
+    let n = [2, 6, 7, 12, 14, 22, 30, 35, 44, 54];
+    let i = 0;
+    let max = n[0];
+    let trungBinh = 0;
+    let tong = 0;
+    while (i < n.length) {
+        if (n[i] > max) {
+            max = n[i];
+        }
+        tong += n[i];
+        i++;
+    }
+    trungBinh = tong / n.length;
+    document.write(`Số lớn nhất là ${max} <br>`);
+    document.write(`Trung bình các số là ${trungBinh}`);
+</script>
+</body>
+</html>

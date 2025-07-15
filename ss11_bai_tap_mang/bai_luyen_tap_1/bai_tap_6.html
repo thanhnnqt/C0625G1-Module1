@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 6</title>
+</head>
+<body>
+<script>
+    let n = [2, 6, 7, 12, 14, 22, 30, 35, 44, 54];
+    let a = +prompt("Nhập số bất kỳ");
+    for (let i = 0; i < n.length; i++) {
+        if (a !== n[i]) {
+            a = +prompt("Nhập lại");
+        }
+        if (a === n[i]) {
+            alert("Số bạn nhập trùng số trong chuỗi");
+        }
+        break;
+    }
+</script>
+</body>
+</html>
