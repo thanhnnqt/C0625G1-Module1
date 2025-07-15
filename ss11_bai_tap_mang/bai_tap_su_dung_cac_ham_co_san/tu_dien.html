@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 3</title>
+</head>
+<body>
+<script>
+    let tiengAnh = ["Dog", "Cat", "Pig", "Chicken", "Bird", "Fish", "How are you"];
+    let tiengViet = ["Chó", "Mèo", "Heo", "Gà", "Chim", "Cá", "I'm fine, thanks you, and you?"];
+    let nhap = prompt("Nhập từ cần tìm kiếm");
+    let check = tiengAnh.includes(nhap);
+    for (i = 0; i < tiengAnh.length; i++) {
+        if (check) {
+            if (nhap === tiengAnh[i]) {
+                alert(tiengViet[i]);
+                break;
+            }
+        } else if (!check) {
+            alert("Không tìm thấy");
+            break;
+        }
+    }
+</script>
+</body>
+</html>

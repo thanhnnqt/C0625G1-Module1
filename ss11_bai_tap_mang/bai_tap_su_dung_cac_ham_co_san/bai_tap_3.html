@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 3</title>
+</head>
+<body>
+<script>
+    let n = "The Quick Brown Fox";
+    let up = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+    let dow = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+    let u = [];
+    for (let i = 0; i < n.length; i++) {
+        if (up.indexOf(n[i]) !== -1) {
+            u.push(n[i].toLowerCase());
+        } else if (dow.indexOf(n[i]) !== -1) {
+            u.push(n[i].toUpperCase());
+        } else {
+            u.push(n[i]);
+        }
+    }
+    alert(u.join(''));
+</script>
+</body>
+</html>

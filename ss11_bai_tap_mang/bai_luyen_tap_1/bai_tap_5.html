@@ -6,14 +6,15 @@
 </head>
 <body>
 <script>
-    let n = [2, -6, 7, -12, 14, -22, -30, 35, 44, 54];
-    let a = 0;
-    for (let i = 0; i < n.length; i++) {
-        if (n[i] < 0) {
-            a++;
+    let n = "viet chuong trinh dem so nguyen am"
+    let x = ["u", "e", "o", "a", "i", "y"];
+    let count = 0;
+    for (i = 0; i < n.length; i++) {
+        if (x.includes(n[i])) {
+            count++;
         }
     }
-    document.write(`Có tất cả ${a} số nguyên âm`);
+    alert(count);
 </script>
 </body>
 </html>

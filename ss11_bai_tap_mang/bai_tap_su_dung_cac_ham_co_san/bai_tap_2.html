@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2</title>
+</head>
+<body>
+<script>
+    let n = prompt("Nhập dãy số");
+    let u = [];
+    for (i = 0; i < n.length; i++) {
+        if (n[i] % 2 === 0 && n[i + 1] % 2 === 0) {
+            u.push(n[i] + "-");
+        } else {
+            u.push(n[i]);
+        }
+    }
+    alert(u.join(""));
+</script>
+</body>
+</html>
