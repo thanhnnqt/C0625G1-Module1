@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 6</title>
+</head>
+<body>
+<script>
+    let n = prompt("Nhập số lượng ký tự");
+    let chuoi = [];
+    for (let i = 0; i < n; i++) {
+        let a = prompt("Nhập các ký tự");
+        chuoi[i] = a;
+    }
+    for (j = 0; j < chuoi.length; j++) {
+        if (chuoi[j] === "-") {
+            chuoi.splice(chuoi.indexOf("-"), 1, "_");
+        }
+    }
+    alert(chuoi.join());
+</script>
+</body>
+</html>

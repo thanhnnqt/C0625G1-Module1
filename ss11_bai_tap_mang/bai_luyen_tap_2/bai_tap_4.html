@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 4</title>
+</head>
+<body>
+<script>
+    let chuoi = prompt("Nhập 1 câu bất kỳ");
+    let giaTri = chuoi.split(" ");
+    for (i = 0; i < giaTri.length; i++) {
+        if (giaTri[i] === "") {
+            giaTri.splice(giaTri[i], 1);
+        }
+    }
+    alert(giaTri.length);
+</script>
+</body>
+</html>

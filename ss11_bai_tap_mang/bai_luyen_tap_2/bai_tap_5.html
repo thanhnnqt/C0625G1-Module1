@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 5</title>
+</head>
+<body>
+<script>
+    a = prompt("Nhập chuỗi 1");
+    b = prompt("Nhập chuỗi 2");
+    let count = 0;
+    for (i = 0; i < a.length; i++) {
+        if (a.length !== b.length) {
+            alert("Hai chuỗi không giống nhau");
+            break;
+        } else if (a[i] === b[i]) {
+            count++;
+        }
+    }
+    if (count == a.length) {
+        alert("Hai chuỗi giống nhau");
+    } else {
+        alert("Hai chuỗi không giống nhau");
+    }
+</script>
+</body>
+</html>

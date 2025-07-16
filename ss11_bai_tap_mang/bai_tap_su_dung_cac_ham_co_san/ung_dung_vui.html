@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng dụng vui</title>
+</head>
+<body>
+<h2>Type anthing slowly</h2>
+<textarea style="width: 300px; height: 100px" id="nhap"></textarea>
+<script>
+    let n = "CHÀO NGÀY MỚI";
+    let outPut = [];
+    let count = 0;
+    document.addEventListener('keydown', function (e) {
+        for (i = 0; i < n.length; i++) {
+            if (count < n.length) {
+                outPut.push(n[i]);
+                document.getElementById("nhap").textContent = outPut[i];
+            }
+        }
+        e.preventDefault();
+    });
+</script>
+</body>
+</html>
