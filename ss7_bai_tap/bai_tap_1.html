@@ -26,9 +26,9 @@
     let nhapTien = document.getElementById("a");
     let tienCanDoi = document.getElementById("FromCurrency");
     let tienKetQua = document.getElementById("ToCurrency");
-
+    let total = 0;
     function doi() {
-        let tong = nhapTien.value * tienKetQua.value / tienCanDoi.value;
+        let total = nhapTien.value * tienKetQua.value / tienCanDoi.value;
         document.getElementById("run").innerText = "Result: " + total + tienKetQua.options[tienKetQua.selectedIndex].text;
     }
 </script>
