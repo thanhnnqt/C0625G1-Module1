@@ -10,9 +10,11 @@
     let giaTri = chuoi.split(" ");
     for (i = 0; i < giaTri.length; i++) {
         if (giaTri[i] === "") {
-            giaTri.splice(giaTri[i], 1);
+            giaTri.splice(i, 1);
+            i--;
         }
     }
+    console.log(giaTri);
     alert(giaTri.length);
 </script>
 </body>

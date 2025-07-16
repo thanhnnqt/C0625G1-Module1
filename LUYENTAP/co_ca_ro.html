@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cờ caro</title>
+</head>
+<body>
+<p id="display"></p>
+<script>
+    let array = new Array(20);
+    for (i = 0; i < array.length; i++) {
+        array[i] = new Array(20);
+        for (j = 0; j < array.length; j++) {
+            array[i][j] = "";
+        }
+    }
+    let play1 = true;
+    display();
+
+    function display() {
+        tableList = `<table border="1"; style="border-collapse: collapse">`
+        for (i = 0; i < array.length; i++) {
+            tableList += `<tr>`;
+            for (j = 0; j < array.length; j++) {
+                tableList += `<td onclick="play(${i},${j})" style="width: 30px; height: 30px; text-align: center">${array[i][j]}</td>`
+            }
+            tableList += `<tr>`;
+        }
+        tableList += `</table>`;
+        document.getElementById("display").innerHTML = tableList;
+    }
+
+    function play(i, j) {
+        if (array[i][j] === "") {
+            if (play1) {
+                array[i][j] = "X";
+                play1 = !play1;
+                if (checkWin()) {
+                    alert("Play 1 là người chiến thắng");
+                }
+            } else {
+                array[i][j] = "O";
+                play1 = !play1;
+                if (checkWin()) {
+                    alert("Play 2 là người chiến thắng");
+                }
+            }
+        }
+        display()
+    }
+
+    function checkWin() {
+        for (i = 0; i < array.length; i++) {
+            for (j = 0; j < array.length; j++) {
+                if (array[i][j] === "X") {
+                    if (array[i][j + 1] === "X" && array[i][j + 2] === "X" && array[i][j + 3] === "X" && array[i][j + 4] === "X") {
+                        return true;
+                    }
+                    if (array[i + 1][j] === "X" && array[i + 2][j] === "X" && array[i + 3][j] === "X" && array[i + 4][j] === "X") {
+                        return true;
+                    }
+                    if (array[i + 1][j + 1] === "X" && array[i + 2][j + 2] === "X" && array[i + 3][j + 3] === "X" && array[i + 4][j + 4] === "X") {
+                        return true;
+                    }
+                    if (array[i + 1][j - 1] === "X" && array[i + 2][j - 2] === "X" && array[i + 3][j - 3] === "X" && array[i + 4][j - 4] === "X") {
+                        return true;
+                    }
+                } else if (array[i][j] === "O") {
+                    if (array[i][j + 1] === "O" && array[i][j + 2] === "O" && array[i][j + 3] === "O" && array[i][j + 4] === "O") {
+                        return true;
+                    }
+                    if (array[i + 1][j] === "O" && array[i + 2][j] === "O" && array[i + 3][j] === "O" && array[i + 4][j] === "O") {
+                        return true;
+                    }
+                    if (array[i + 1][j + 1] === "O" && array[i + 2][j + 2] === "O" && array[i + 3][j + 3] === "O" && array[i + 4][j + 4] === "O") {
+                        return true;
+                    }
+                    if (array[i + 1][j - 1] === "O" && array[i + 2][j - 2] === "O" && array[i + 3][j - 3] === "O" && array[i + 4][j - 4] === "O") {
+                        return true;
+                    }
+                }
+            }
+        }
+    }
+</script>
+</body>
+</html>

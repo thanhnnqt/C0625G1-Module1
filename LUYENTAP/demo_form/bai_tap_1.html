@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo</title>
+</head>
+<body>
+<form>
+    <input oninput="checkValidate()" id="name" placeholder="Nhập tên">
+    <span id="tichXanh" style="color: green; display: none;">&#10004;</span><br>
+    <p style="color: red" id="nameError"></p>
+    <input oninput="checkValidate()" id="address" placeholder="Nhập địa chỉ">
+    <span id="tichXanh2" style="color: green; display: none;">&#10004;</span><br>
+    <p style="color: red" id="loiDiaChi"></p>
+    <button id="myButton" disabled>Gửi</button>
+</form>
+<script>
+    function checkValidate() {
+        let name = document.getElementById("name").value;
+        let address = document.getElementById("address").value;
+        const dauTich = document.getElementById("tichXanh");
+        const dauTich2 = document.getElementById("tichXanh2");
+        if (name.length < 5) {
+            document.getElementById("nameError").innerText = "Tên phải ít nhất 5 ký tự";
+            dauTich.style.display = "none";
+        } else {
+            document.getElementById("nameError").innerText = "";
+            dauTich.style.display = "inline";
+        }
+        if (address.length < 5) {
+            document.getElementById("loiDiaChi").innerText = "Địa chỉ phải ít nhất 5 ký tự";
+            dauTich2.style.display = "none";
+        } else {
+            document.getElementById("loiDiaChi").innerText = ""
+            dauTich2.style.display = "inline";
+        }
+        if (name.length >= 5 && address.length >= 5) {
+            document.getElementById("myButton").disabled = false;
+        } else {
+            document.getElementById("myButton").disabled = true;
+        }
+    }
+</script>
+</body>
+</html>
