@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 9</title>
+</head>
+<body>
+<script>
+    function daoMang() {
+        let n = +prompt("Nhập độ dài mảng");
+        let array = [];
+        for (i = 0; i < n; i++) {
+            let a = prompt("Nhập phần tử trong mảng");
+            array.push(a);
+        }
+        let b = prompt("Nhập ký tự bất kỳ");
+        let count = 0;
+        for (i = 0; i < array.length; i++) {
+            if (b === array[i]) {
+                count++;
+            }
+        }
+        if (count > 0) {
+            alert(count);
+        } else {
+            alert("-1");
+        }
+    }
+
+    daoMang();
+</script>
+</body>
+</html>
