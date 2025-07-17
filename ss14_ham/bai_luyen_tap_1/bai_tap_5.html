@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 5</title>
+</head>
+<body>
+<script>
+    let ngoiSao = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+    let chomSao = ["Ursa Minor", "Taurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+
+    function nhap() {
+        for (let i = 0; i < ngoiSao.length; i++) {
+            if (timKiem === ngoiSao[i]) {
+                alert(chomSao[i]);
+            }
+        }
+    }
+
+    let timKiem = prompt("Nhập ngôi sao");
+    nhap();
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2</title>
+</head>
+<body>
+<script>
+    let dienTich = 0;
+    let chuVi = 0;
+
+    function tinhDienTich(r) {
+        r = +prompt("Nhập bán kính");
+        dienTich = 3.14 * r * r;
+    }
+
+    function tinhChuVi(r) {
+        r = +prompt("Nhập bán kính");
+        chuVi = 3.14 * r * 2;
+    }
+
+    tinhDienTich();
+    alert(dienTich);
+    tinhChuVi();
+    alert(chuVi);
+</script>
+</body>
+</html>

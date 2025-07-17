@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 3</title>
+</head>
+<body>
+<script>
+    let n = +prompt("Nhập số nguyên dương");
+    let ketQua = 1;
+    while (n < 1) {
+        n = +prompt("Nhập lại");
+    }
+
+    function tinhGiaiThua() {
+        for (i = 1; i <= n; i++) {
+            ketQua *= i;
+        }
+    }
+
+    tinhGiaiThua();
+    alert(ketQua);
+</script>
+</body>
+</html>

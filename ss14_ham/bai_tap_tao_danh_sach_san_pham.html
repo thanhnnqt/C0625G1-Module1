@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Danh sách sản phầm</title>
+</head>
+<body>
+<input type="text" id="congSanPham">
+<input type="button" id="them" value="Thêm" onclick="them()">
+<p id="display"></p>
+<script>
+    let sanPham = ["Sony Xsperia", "Samsung Galaxy", "Nokia 6", "Xiaomi Redmi Note 4", "Apple iPhone 6S", "Xiaomi Mi 5 Plus", "Apple iPhone 8 Plus", "Fujisu F-04E", "Oppo A71"];
+
+    function hienThiBang() {
+        let taoBang = `<table border="1"; style="border-collapse: collapse">`;
+        taoBang += `<th>STT</th>`
+        taoBang += `<th>Tên sản phẩm</th>`
+        taoBang += `<th colspan="2">Thao tác</th>`;
+        for (i = 0; i < sanPham.length; i++) {
+            taoBang += `<tr>`;
+            taoBang += `<td>${i + 1}</td>`
+            taoBang += `<td>${sanPham[i]}</td>`;
+            taoBang += `<td><button value="Edit" onclick="suaSanPham(${i})"; style="background-color: green; color: white">Sửa</td>`;
+            taoBang += `<td><button value="Delete" onclick="xoaSanPham(${i})"; style="background-color: red; color: white">Xóa</td>`;
+            taoBang += `</tr>`;
+        }
+        taoBang += `</table>`;
+        document.getElementById("display").innerHTML = taoBang;
+    }
+
+    hienThiBang();
+
+    function them() {
+        let sanPhamMoi = document.getElementById("congSanPham").value;
+        sanPham.push(sanPhamMoi);
+        alert(`Đã thêm sản phẩm ${sanPhamMoi} vào danh sách`);
+        hienThiBang();
+        document.getElementById("congSanPham").value = "";
+    }
+
+    function xoaSanPham(i) {
+        sanPham.splice(i, 1);
+        hienThiBang();
+    }
+
+    function suaSanPham(i) {
+        let sanPhamMoi = prompt(`Nhập tên sản phầm mới`);
+        sanPham[i] = sanPhamMoi;
+        hienThiBang();
+    }
+</script>
+</body>
+</html>
