@@ -6,25 +6,25 @@
 </head>
 <body>
 <script>
-    let n = +prompt("Nhập số feet");
-    let m = +prompt("Nhập số meter");
     let feet = 0;
     let meter = 0;
 
-    function feetToMeter() {
+    function feetToMeter(n) {
         feet = n * 3.279
         return feet;
     }
 
-    function meterToFeet() {
+    function meterToFeet(m) {
         meter = m * 0.305
         return meter;
     }
 
-    feetToMeter();
-    meterToFeet();
-    document.write(`${n} feet = ${feet} meter <br>`);
-    document.write(`${m} meter = ${meter} feet`);
+    let a = +prompt("Nhập số feet muốn đổi");
+    let b = +prompt("Nhập số meter muốn đổi");
+    feetToMeter(a);
+    meterToFeet(b);
+    document.write(`${a} feet = ${feet} meter <br>`);
+    document.write(`${b} feet = ${meter} feet`);
 </script>
 </body>
 </html>

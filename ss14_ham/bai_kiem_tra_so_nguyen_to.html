@@ -9,7 +9,6 @@
     let count = 0;
 
     function isPrime(number) {
-        number = +prompt("Nhập số tự nhiên");
         for (i = 2; i < number; i++) {
             if (number % i === 0) {
                 count++;
@@ -22,7 +21,8 @@
         }
     }
 
-    isPrime();
+    let n = +prompt("Nhập số tự nhiên")
+    isPrime(n);
 </script>
 </body>
 </html>

@@ -6,16 +6,16 @@
 </head>
 <body>
 <script>
-    function doiCho() {
-        let a = +prompt("Nhập số thứ nhất");
-        let b = +prompt("Nhập số thứ hai");
+    function doiCho(a, b) {
         let c = a;
         a = b;
         b = c;
         alert(`Hai số nhập vào là ${a} và ${b}`);
     }
 
-    doiCho();
+    let x = +prompt("Nhập số thứ nhất");
+    let y = +prompt("Nhập số thứ hai");
+    doiCho(x, y);
 </script>
 </body>
 </html>

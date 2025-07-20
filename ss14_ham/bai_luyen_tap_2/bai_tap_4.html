@@ -6,17 +6,16 @@
 </head>
 <body>
 <script>
-    let n = prompt("Nhập ký tự");
-
-    function kiemTra() {
-        if (n < 0 || n === 0 || n > 0) {
+    function kiemTra(num) {
+        if (num < 0 || num === 0 || num > 0) {
             alert(true);
         } else {
             alert(false);
         }
     }
 
-    kiemTra();
+    let n = prompt("Nhập ký tự");
+    kiemTra(n);
 </script>
 </body>
 </html>

@@ -6,8 +6,7 @@
 </head>
 <body>
 <script>
-    function kiemTra() {
-        let n = +prompt("Nhập vào 1 số");
+    function kiemTra(n) {
         if (n > 0) {
             alert(true);
         } else {
@@ -15,7 +14,8 @@
         }
     }
 
-    kiemTra();
+    let x = +prompt("Nhập vào 1 số");
+    kiemTra(x);
 </script>
 </body>
 </html>

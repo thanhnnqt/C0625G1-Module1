@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài tập 2</title>
+</head>
+<body>
+<script>
+
+    function doiSo(num) {
+        let n = [];
+        while (num >= 1) {
+            let a = num % 2;
+            n.unshift(a);
+            num = Math.floor(num / 2);
+        }
+        return n;
+    }
+
+    let x = +prompt("Nhập số cần đổi");
+    let ketQua = doiSo(x);
+    alert(ketQua.join(""));
+</script>
+</body>
+</html>

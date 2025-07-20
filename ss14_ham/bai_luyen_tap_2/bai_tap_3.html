@@ -12,13 +12,13 @@
         n = +prompt("Nhập lại");
     }
 
-    function tinhGiaiThua() {
-        for (i = 1; i <= n; i++) {
+    function tinhGiaiThua(num) {
+        for (let i = 1; i <= num; i++) {
             ketQua *= i;
         }
     }
 
-    tinhGiaiThua();
+    tinhGiaiThua(n);
     alert(ketQua);
 </script>
 </body>

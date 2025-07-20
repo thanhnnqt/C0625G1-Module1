@@ -6,10 +6,7 @@
 </head>
 <body>
 <script>
-    function kiemTra() {
-        let a = +prompt("Nhập số nguyên a");
-        let b = +prompt("Nhập số nguyên b");
-        let c = +prompt("Nhập số nguyên c");
+    function kiemTra(a, b, c) {
         if (a > b) {
             if (a > c) {
                 alert(a);
@@ -25,7 +22,10 @@
         }
     }
 
-    kiemTra();
+    let x = +prompt("Nhập số nguyên a");
+    let y = +prompt("Nhập số nguyên b");
+    let z = +prompt("Nhập số nguyên c");
+    kiemTra(x, y, z);
 </script>
 </body>
 </html>

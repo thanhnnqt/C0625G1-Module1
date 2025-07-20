@@ -9,16 +9,16 @@
     let ngoiSao = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
     let chomSao = ["Ursa Minor", "Taurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
 
-    function nhap() {
+    function nhap(giaTri) {
         for (let i = 0; i < ngoiSao.length; i++) {
-            if (timKiem === ngoiSao[i]) {
+            if (giaTri === ngoiSao[i]) {
                 alert(chomSao[i]);
             }
         }
     }
 
     let timKiem = prompt("Nhập ngôi sao");
-    nhap();
+    nhap(timKiem);
 </script>
 </body>
 </html>

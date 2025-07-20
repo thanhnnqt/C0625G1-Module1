@@ -6,16 +6,16 @@
 </head>
 <body>
 <script>
-    function daoMang() {
-        let n = +prompt("Nhập độ dài mảng");
-        let array = [];
-        for (i = 0; i < n; i++) {
-            let a = prompt("Nhập phần tử trong mảng");
-            array.push(a);
-        }
-        let b = prompt("Nhập ký tự bất kỳ");
+    let n = +prompt("Nhập độ dài mảng");
+    let array = [];
+    for (let i = 0; i < n; i++) {
+        let a = prompt("Nhập phần tử trong mảng");
+        array.push(a);
+    }
+
+    function kiemTra(b) {
         let count = 0;
-        for (i = 0; i < array.length; i++) {
+        for (let i = 0; i < array.length; i++) {
             if (b === array[i]) {
                 count++;
             }
@@ -27,7 +27,8 @@
         }
     }
 
-    daoMang();
+    let x = prompt("Nhập ký tự bất kỳ");
+    kiemTra(x);
 </script>
 </body>
 </html>

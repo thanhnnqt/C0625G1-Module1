@@ -10,19 +10,18 @@
     let chuVi = 0;
 
     function tinhDienTich(r) {
-        r = +prompt("Nhập bán kính");
         dienTich = 3.14 * r * r;
     }
 
     function tinhChuVi(r) {
-        r = +prompt("Nhập bán kính");
         chuVi = 3.14 * r * 2;
     }
 
-    tinhDienTich();
-    alert(dienTich);
-    tinhChuVi();
-    alert(chuVi);
+    a = +prompt("Nhập bán kính");
+    tinhDienTich(a);
+    alert(`Diện tích hình tròn với bán kính = ${a} là ${dienTich}`);
+    tinhChuVi(a);
+    alert(`Chu vi hình tròn với bán kính = ${a} là ${chuVi}`);
 </script>
 </body>
 </html>
