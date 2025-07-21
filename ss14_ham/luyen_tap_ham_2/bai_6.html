@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 6</title>
+</head>
+<body>
+<script>
+    function checkString(str) {
+        let nguyenAm = ["a", "e", "i", "o", "u", "y"];
+        for (let i = 0; i < str.length; i++) {
+            if (nguyenAm.includes(str[i])) {
+                text.push(str[i])
+            }
+        }
+    }
+
+    let text = [];
+    let n = prompt("Nhập chuỗi");
+    checkString(n);
+    alert(text);
+</script>
+</body>
+</html>

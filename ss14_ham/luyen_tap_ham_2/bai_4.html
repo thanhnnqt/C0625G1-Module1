@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 4</title>
+</head>
+<body>
+<script>
+    let n = prompt("Nhập 1 chuỗi");
+    let up = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+    let dow = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+    let check1 = 0;
+    let check2 = 0;
+    for (let i = 0; i < n.length; i++) {
+        if (up.includes(n[i])) {
+            check1++;
+        }
+        if (dow.includes(n[i])) {
+            check2++;
+        }
+    }
+    if (check1 === check2) {
+        alert("OK");
+    } else {
+        alert("NO");
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 8</title>
+</head>
+<body>
+<script>
+    let n = +prompt("Nhập độ dài mảng n");
+    let mang = [];
+    for (let i = 0; i < n; i++) {
+        let a = +prompt("Nhập các phần tử");
+        mang.push(a);
+    }
+    alert(mang);
+    let count = 0;
+    let max = mang[0];
+    for (let i = 0; i < mang.length; i++) {
+        if (max < mang[i]) {
+            max = mang[i]
+        }
+    }
+    for (let i = 0; i < mang.length; i++) {
+        if (max === mang[i]) {
+            count++;
+        }
+    }
+    alert(`Số phần tử lớn nhất trong mảng là ${count}`);
+</script>
+</body>
+</html>

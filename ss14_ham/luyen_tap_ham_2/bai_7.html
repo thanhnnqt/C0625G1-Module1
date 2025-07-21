@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 7</title>
+</head>
+<body>
+<script>
+    let n = +prompt("Nhập độ dài mảng n");
+    let mang = [];
+    let result = [];
+    for (let i = 0; i < n; i++) {
+        let a = +prompt("Nhập các phần tử");
+        mang.push(a);
+    }
+    alert(mang);
+    for (let i = 0; i < mang.length; i++) {
+        let x = mang[i] % 10;
+        let y = Math.floor(mang[i] / 10);
+        if (x > y) {
+            result.push(mang[i]);
+        }
+    }
+    alert(result);
+</script>
+</body>
+</html>

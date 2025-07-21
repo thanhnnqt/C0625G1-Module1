@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 9</title>
+</head>
+<body>
+<script>
+    let n = +prompt("Nhập độ dài mảng n");
+    let mang = [];
+    for (let i = 0; i < n; i++) {
+        let a = +prompt("Nhập các phần tử");
+        mang.push(a);
+    }
+    alert(mang);
+    let total = 0;
+    for (let i = 0; i < mang.length; i++) {
+        total += mang[i];
+    }
+    let average = total / mang.length;
+    let count = 0;
+    for (let i = 0; i < mang.length; i++) {
+        if (average === mang[i]) {
+            count++;
+        }
+    }
+    alert(`Số các phần tử trung bình trong mảng là ${count}`);
+</script>
+</body>
+</html>

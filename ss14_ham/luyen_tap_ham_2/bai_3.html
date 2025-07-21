@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 3</title>
+</head>
+<body>
+<script>
+    let n = +prompt("Nhập độ dài mảng n");
+    let mang = [];
+    let kiemTra = 0;
+    for (let i = 0; i < n; i++) {
+        let a = +prompt("Nhập các phần tử");
+        mang.push(a);
+    }
+    alert(mang);
+    for (let i = 0; i < mang.length; i++) {
+        if (mang[i] <= mang[i + 1]) {
+            kiemTra++;
+        }
+    }
+    if (kiemTra === mang.length - 1) {
+        alert("OK");
+    } else {
+        alert("NO");
+    }
+</script>
+</body>
+</html>

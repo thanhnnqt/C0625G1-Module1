@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo</title>
+</head>
+<body>
+<script>
+    function person(firstName, lastName, age, height) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.age = age;
+        this.height = height;
+        this.hienThi = function () {
+            alert(`Hi I'm ${firstName} ${lastName}, age ${age}, height ${height}`);
+        }
+    }
+
+    var me = new person("Nguyễn Nhật", "Thành", "29", "1.76m");
+    me.hienThi();
+</script>
+</body>
+</html>

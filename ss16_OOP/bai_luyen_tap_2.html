@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2</title>
+</head>
+<body>
+<script>
+    class Temperature {
+        constructor(celsius) {
+            this.celsius = celsius;
+        }
+
+        getFahrenheit() {
+            return this.celsius * 9 / 5 + 32;
+        }
+
+        getKelvin() {
+            return this.celsius + 273;
+        }
+    }
+
+    do {
+        a = +prompt("Nhập độ C cần đổi");
+    } while (a < -273);
+    let temp = new Temperature(a);
+    alert(`${a} độ C = ${temp.getFahrenheit()} độ F`);
+    alert(`${a} độ C = ${temp.getKelvin()} độ K`);
+</script>
+</body>
+</html>

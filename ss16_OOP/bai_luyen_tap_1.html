@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1</title>
+</head>
+<body>
+<canvas id="draw" width="300" height="200" style="border: 1px solid #000000;"></canvas>
+<br>
+<script>
+    class Rectangle {
+        constructor(length, width) {
+            this.length = length;
+            this.width = width;
+        }
+
+        getArea() {
+            return this.length * this.width;
+        }
+
+        getPrimeter() {
+            return (this.length + this.width) * 2;
+        }
+
+        getLength() {
+            return this.length;
+        }
+
+        getWidth() {
+            return this.width;
+        }
+    }
+
+    let rectangle = new Rectangle(150, 100);
+    document.write(`Diện tích: ${rectangle.getArea()} <br>`);
+    document.write(`Chu vi: ${rectangle.getPrimeter()}`);
+    let canVas = document.getElementById("draw");
+    let ctx = canVas.getContext("2d");
+    ctx.fillStyle = "#FF0000";
+    ctx.fillRect(0, 0, rectangle.getLength(), rectangle.getWidth());
+</script>
+</body>
+</html>
