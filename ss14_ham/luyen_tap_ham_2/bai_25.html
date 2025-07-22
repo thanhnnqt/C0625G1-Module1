@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Bài 5</title>
+    <title>Bài 25</title>
 </head>
 <body>
 <script>
@@ -14,15 +14,15 @@
         mang.push(a);
     }
     alert(mang);
-    for (let i = 0; i < mang.length; i + 2) {
-        if (mang[i] < mang[i + 1]) {
+    for (let i = 0; i < mang.length; i++) {
+        if (mang[i + 1] % mang[i] === 0) {
             count++;
         }
     }
-    if (count === mang.length / 2) {
-        alert(true);
+    if (count === mang.length - 1) {
+        alert("OK");
     } else {
-        alert(false);
+        alert("NO");
     }
 </script>
 </body>

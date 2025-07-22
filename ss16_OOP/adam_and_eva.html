@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Adam and Eva</title>
+</head>
+<body>
+<script>
+    class Apple {
+        #weight;
+        #color;
+
+        constructor(weight, color) {
+            this.#weight = weight;
+            this.#color = color;
+        }
+
+        getWeight() {
+            return this.#weight;
+        }
+
+        getColor() {
+            return this.#color;
+        }
+
+        setWeight(weight) {
+            this.#weight = weight;
+        }
+
+        setColor(color) {
+            this.#color = color;
+        }
+    }
+
+    class Human {
+        #name;
+        #gender;
+        #weight;
+
+        constructor(name, gender, weight) {
+            this.#name = name;
+            this.#gender = gender;
+            this.#weight = weight;
+        }
+
+        getName() {
+            return this.#name;
+        }
+
+        getGender() {
+            return this.#gender;
+        }
+
+        getWeight() {
+            return this.#weight;
+        }
+
+        setName(name) {
+            this.#name = name;
+        }
+
+        setGender(gender) {
+            this.#gender = gender;
+        }
+
+        setWeight(weight) {
+            this.#weight = weight;
+        }
+
+        say(text) {
+            console.log(this.#name + ":" + text);
+        }
+
+        eatApple(apple) {
+            this.say("Táo chính rồi, ăn thôi");
+        }
+
+        checkApple(apple) {
+            while (apple.getWeight() > 0) {
+                this.eatApple(apple);
+                adam.setWeight(adam.getWeight() + 1);
+                eva.setWeight(eva.getWeight() + 1);
+                apple.setWeight(apple.getWeight() - 2);
+            }
+        }
+    }
+
+    let apple1 = new Apple(10, 'red');
+    let adam = new Human("Adam", "Male", 80);
+    let eva = new Human("Eva", "Female", 50);
+    adam.checkApple(apple1);
+    eva.checkApple(apple1);
+    console.log(`Cân nặng của Adam là: ${adam.getWeight()}`);
+    console.log(`Cân nặng của Eva là: ${eva.getWeight()}`);
+    console.log(`Đơn vị táo còn lại là ${apple1.getWeight()}`);
+</script>
+</body>
+</html>

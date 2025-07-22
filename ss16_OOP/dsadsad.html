@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Animal{
+        #name;
+        #weight;
+        #speed;
+        constructor(name, weight, speed) {
+            this.#name = name;
+            this.#weight = weight;
+            this.#speed = speed;
+        }
+        getName(){
+            return this.#name;
+        }
+        getWeight(){
+            return this.#weight;
+        }
+        getSpeed(){
+            return this.#speed;
+        }
+        setName(name){
+            this.#name = name;
+        }
+        setSpeed(speed){
+            this.#speed = speed;
+        }
+        setWeight(weight){
+            this.#weight = weight;
+        }
+        say(text){
+            // console.log("chưa biết kêu thế nào");
+        }
+    }
+
+    class Rat extends Animal{
+        #status;
+        constructor(name, weight, speed, status) {
+            super(name,weight,speed);
+            this.#status = status;
+        }
+        setStatus(status){
+            this.#status = status;
+        }
+        getStatus(){
+            return this.#status;
+        }
+        say(text) {
+            console.log(this.getName() +": chit chit :" + text);
+        }
+    }
+    class Cat extends Animal{
+        constructor(name, weight, speed) {
+            super(name,weight,speed);
+        }
+        say(text){
+            console.log(this.getName() +" meo meo: "+ text);
+        }
+        eatMouse(mouse){
+            if (mouse.getStatus()==='song'){
+                this.say("còn sống ăn thôi");
+                this.setWeight(this.getWeight()+mouse.getWeight());
+            }else {
+                this.say("Chết rồi không ăn");
+            }
+        }
+        catchMouse(mouse){
+            if (this.getSpeed()>mouse.getSpeed()){
+                this.say(this.getName() +" Bắt được rồi ");
+                this.eatMouse(mouse);
+            }else {
+                mouse.say("Đố mày bắt được tao!");
+                this.say("Hãy đợi đấy");
+            }
+        }
+    }
+
+    // tạo ra 3 con chuột;
+    let jerry1= new Rat("Jerry1",1,10,'song');
+    let jerry2= new Rat("Jerry2",1,0,'chet');
+    let jerry3= new Rat("Jerry3",1,5,'song');
+    // tạo ra con mèo Tom
+    let tom = new Cat("Tom",10,8);
+    tom.catchMouse(jerry1);
+    tom.catchMouse(jerry2);
+    tom.catchMouse(jerry3);
+
+    console.log("khối lượng của con mèo: "+ tom.getWeight());
+</script>
+</body>
+</html>

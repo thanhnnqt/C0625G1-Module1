@@ -2,28 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Bài 5</title>
+    <title>Bài 24</title>
 </head>
 <body>
 <script>
     let n = +prompt("Nhập độ dài mảng n");
     let mang = [];
-    let count = 0;
+    let u = [];
     for (let i = 0; i < n; i++) {
         let a = +prompt("Nhập các phần tử");
         mang.push(a);
     }
     alert(mang);
-    for (let i = 0; i < mang.length; i + 2) {
-        if (mang[i] < mang[i + 1]) {
-            count++;
+    for (let i = 0; i < mang.length; i++) {
+        let count = 0;
+        for (let j = 1; j <= mang[i]; j++) {
+            if (mang[i] % j === 0) {
+                count += j;
+            }
         }
+        u.push(count);
     }
-    if (count === mang.length / 2) {
-        alert(true);
-    } else {
-        alert(false);
-    }
+    alert(u);
 </script>
 </body>
 </html>

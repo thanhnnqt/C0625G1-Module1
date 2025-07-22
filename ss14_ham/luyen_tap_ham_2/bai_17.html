@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 17</title>
+</head>
+<body>
+<script>
+    let n = prompt("Nhập vào 1 chuỗi");
+    let array = [];
+    if (n.includes(" ")) {
+        for (let i = 0; i < n.length; i++) {
+            if (n[i] === " ") {
+                array.push(n[i + 1]);
+            }
+        }
+        array.unshift(n[0]);
+        alert(array.join(""));
+    } else {
+        alert(n);
+    }
+</script>
+</body>
+</html>

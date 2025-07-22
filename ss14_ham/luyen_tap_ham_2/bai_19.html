@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 19</title>
+</head>
+<body>
+<script>
+    let up = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+    let arr = [];
+
+    function checkString(str) {
+        for (let i = 0; i < str.length; i++) {
+            if (up.includes(str[i])) {
+                arr.push(str[i]);
+            }
+        }
+    }
+
+    let a = prompt("Nhập chuỗi");
+    checkString(a);
+    alert(arr.join(""));
+</script>
+</body>
+</html>

@@ -5,49 +5,67 @@
     <title>Danh sách sản phầm</title>
 </head>
 <body>
-<input type="text" id="congSanPham">
-<input type="button" id="them" value="Thêm" onclick="them()">
+<input type="text" id="name">
+<input type="button" id="them" value="Thêm" onclick="thaoTac.add()">
 <p id="display"></p>
 <script>
-    let sanPham = ["Sony Xsperia", "Samsung Galaxy", "Nokia 6", "Xiaomi Redmi Note 4", "Apple iPhone 6S", "Xiaomi Mi 5 Plus", "Apple iPhone 8 Plus", "Fujisu F-04E", "Oppo A71"];
+    class SanPham {
+        #name;
 
-    function hienThiBang() {
-        let taoBang = `<table border="1"; style="border-collapse: collapse">`;
-        taoBang += `<th>STT</th>`
-        taoBang += `<th>Tên sản phẩm</th>`
-        taoBang += `<th colspan="2">Thao tác</th>`;
-        for (i = 0; i < sanPham.length; i++) {
-            taoBang += `<tr>`;
-            taoBang += `<td>${i + 1}</td>`
-            taoBang += `<td>${sanPham[i]}</td>`;
-            taoBang += `<td><button value="Edit" onclick="suaSanPham(${i})"; style="background-color: green; color: white">Sửa</td>`;
-            taoBang += `<td><button value="Delete" onclick="xoaSanPham(${i})"; style="background-color: red; color: white">Xóa</td>`;
-            taoBang += `</tr>`;
+        constructor(name) {
+            this.#name = name;
         }
-        taoBang += `</table>`;
-        document.getElementById("display").innerHTML = taoBang;
+
+        getName() {
+            return this.#name;
+        }
+
+        setName(name) {
+            this.#name = name;
+        }
     }
 
-    hienThiBang();
+    class ThaoTac {
+        display() {
+            let taoBang = `<table border="1"; style="border-collapse: collapse">`;
+            taoBang += `<th>STT</th>`
+            taoBang += `<th>Tên sản phẩm</th>`
+            taoBang += `<th colspan="2">Thao tác</th>`;
+            for (let i = 0; i < danhSachSP.length; i++) {
+                taoBang += `<tr>`;
+                taoBang += `<td>${i + 1}</td>`
+                taoBang += `<td>${danhSachSP[i].getName()}</td>`;
+                taoBang += `<td><button value="Edit" onclick="thaoTac.edit(${i})"; style="background-color: green; color: white">Sửa</td>`;
+                taoBang += `<td><button value="Delete" onclick="thaoTac.del(${i})"; style="background-color: red; color: white">Xóa</td>`;
+                taoBang += `</tr>`;
+            }
+            taoBang += `</table>`;
+            document.getElementById("display").innerHTML = taoBang;
+        }
 
-    function them() {
-        let sanPhamMoi = document.getElementById("congSanPham").value;
-        sanPham.push(sanPhamMoi);
-        alert(`Đã thêm sản phẩm ${sanPhamMoi} vào danh sách`);
-        hienThiBang();
-        document.getElementById("congSanPham").value = "";
+        add() {
+            let name = document.getElementById("name").value;
+            danhSachSP.push(new SanPham(name));
+            this.display();
+            document.getElementById("name").value = "";
+        }
+
+        edit(i) {
+            let name = prompt(`Nhập tên sản phầm mới`);
+            let sanPhamMoi = new SanPham(name);
+            danhSachSP[i] = sanPhamMoi;
+            this.display();
+        }
+
+        del(i) {
+            danhSachSP.splice(i, 1);
+            this.display();
+        }
     }
 
-    function xoaSanPham(i) {
-        sanPham.splice(i, 1);
-        hienThiBang();
-    }
-
-    function suaSanPham(i) {
-        let sanPhamMoi = prompt(`Nhập tên sản phầm mới`);
-        sanPham[i] = sanPhamMoi;
-        hienThiBang();
-    }
+    let danhSachSP = [new SanPham("ss"), new SanPham("nokia")];
+    let thaoTac = new ThaoTac(danhSachSP);
+    thaoTac.display();
 </script>
 </body>
 </html>
