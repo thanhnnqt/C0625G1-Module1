@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 4</title>
+</head>
+<body>
+<p id="display"></p>
+<input type="button" onclick="acction1.del(phoneList)" value="Xóa danh bạ" id="del">
+<script>
+    class Phone {
+        #number;
+        #name;
+        #address;
+
+        constructor(number, name, address) {
+            this.#number = number;
+            this.#name = name;
+            this.#address = address;
+        }
+
+        getNumber() {
+            return this.#number;
+        }
+
+        getName() {
+            return this.#name;
+        }
+
+        getAddress() {
+            return this.#address;
+        }
+
+        setNumber(number) {
+            this.#number = number;
+        }
+
+        setName(name) {
+            this.#name = name;
+        }
+
+        setAddress(address) {
+            this.#address = address;
+        }
+    }
+
+    class Action {
+        display() {
+            let table = `<table border="1"; style="border-collapse: collapse">`;
+            table += `<th>Số điện thoại</th>`;
+            table += `<th>Tên chủ danh bạ</th>`;
+            table += `<th>Địa chỉ</th>`;
+            for (let i = 0; i < phoneList.length; i++) {
+                table += `<tr>`;
+                table += `<td>${phoneList[i].getNumber()}</td>`;
+                table += `<td>${phoneList[i].getName()}</td>`;
+                table += `<td>${phoneList[i].getAddress()}</td>`;
+            }
+            table += `</table>`;
+            document.getElementById("display").innerHTML = table;
+        }
+
+        del() {
+            let number = prompt("Nhập số điện thoại cần xóa");
+            let check = true;
+            for (let i = 0; i < phoneList.length; i++) {
+                if (phoneList[i].getNumber() === number) {
+                    if (confirm("Bạn có chắc chắn xóa không")) {
+                        phoneList.splice(i, 1);
+                        check = true;
+                    }
+                } else {
+                    check = false;
+                }
+            }
+            if (!check) {
+                alert("Số điện thoại vừa nhập không đúng")
+            }
+            this.display();
+        }
+    }
+
+    let phoneList = [new Phone("0354278740", "Nguyễn Văn A", "Đà Nẵng"), new Phone("0123456789", "Nguyễn Văn B", "Quảng Nam")];
+    let acction1 = new Action(phoneList);
+    acction1.display();
+</script>
+</body>
+</html>

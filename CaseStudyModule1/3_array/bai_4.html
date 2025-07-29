@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 4</title>
+</head>
+<body>
+<script>
+    let total = 0;
+    let check = true;
+    let option;
+    let a;
+    let menu = "-----Menu----- \n Nhập số để chọn món \n 1. Cafe \n 2. Cam vắt \n 3. Nước ép cà rốt \n 4. Nước ép cà chua \n 5. Nước lọc \n 6. Nước dừa \n 7. Kết thúc chọn món \n";
+    do {
+        option = +prompt(`${menu} Tổng thanh toán là: ${total}k VND`);
+        switch (option) {
+            case 1:
+                a = +prompt("Cafe giá 12k, nhập số lượng");
+                total += a * 12;
+                menu += `Cafe: ${a} ly \n`;
+                break;
+            case 2:
+                a = +prompt("Cam vắt giá 20k, nhập số lượng");
+                total += a * 20;
+                menu += `Cam vắt: ${a} ly \n`;
+                break;
+            case 3:
+                a = +prompt("Nước ép cà rốt giá 20k, nhập số lượng");
+                total += a * 20
+                menu += `Nước ép cà rốt: ${a} ly \n`;
+                break;
+            case 4:
+                a = +prompt("Nước ép cà chua giá 15k, nhập số lượng");
+                total += a * 15;
+                menu += `Nước ép cà chua: ${a} ly \n`;
+                break;
+            case 5:
+                a = +prompt("Nước lọc giá 10k, nhập số lượng");
+                total += a * 10;
+                menu += `Nước lọc: ${a} ly \n`;
+                break;
+            case 6:
+                a = +prompt("Nước dừa giá 25k, nhập số lượng");
+                total += a * 25;
+                menu += `Nước dừa: ${a} ly \n`;
+                break;
+            case 7:
+                alert(`Số tiền thanh toán là ${total}k VND`);
+                check = !check;
+                break;
+        }
+    } while (check);
+</script>
+</body>
+</html>

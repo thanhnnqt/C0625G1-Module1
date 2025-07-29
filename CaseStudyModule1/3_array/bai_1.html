@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1</title>
+</head>
+<body>
+<script>
+    let a = [];
+    let b = [];
+    let n = +prompt("Nhập số phần tử mảng a");
+    for (let i = 0; i < n; i++) {
+        let x = +prompt("Nhập các phần tử");
+        a.push(x);
+    }
+    for (let i = 0; i < a.length; i++) {
+        let x = 0;
+        for (let j = 0; j <= i; j++) {
+            x += a[j];
+        }
+        b.push(x);
+    }
+    console.log(b);
+</script>
+</body>
+</html>

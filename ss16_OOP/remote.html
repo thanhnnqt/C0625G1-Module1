@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Remote</title>
+</head>
+<body>
+<script>
+    class Remote {
+        #id;
+
+        constructor(id) {
+            this.#id = id;
+        }
+
+        changeChannel(tiVi, channel) {
+            tiVi.setChannel(channel);
+            console.log(tiVi.getChannel());
+        }
+
+        changeVolume(tiVi, i) {
+            tiVi.setVolume(tiVi.getVolume() + i);
+            console.log(tiVi.getVolume());
+        }
+
+        remoteOn(tiVi) {
+            tiVi.setStatus(true);
+        }
+
+        remoteOff(tiVi) {
+            tiVi.setStatus(false);
+        }
+
+        remoteConnectToTiVi(tiVi) {
+            if (tiVi.getStatus()) {
+                tiVi.turnOn();
+            } else {
+                tiVi.turnOff();
+            }
+        }
+    }
+
+    class Tivi {
+        #channel;
+        #volume;
+        #status;
+
+        constructor(channel, volume, status) {
+            this.#channel = channel;
+            this.#volume = volume;
+            this.#status = status;
+        }
+
+        getChannel() {
+            return this.#channel;
+        }
+
+        getVolume() {
+            return this.#volume;
+        }
+
+        getStatus() {
+            return this.#status;
+        }
+
+        setChannel(channel) {
+            this.#channel = channel;
+        }
+
+        setVolume(volume) {
+            this.#volume = volume;
+        }
+
+        setStatus(status) {
+            this.#status = status;
+        }
+
+        turnOn() {
+            console.log(true);
+        }
+
+        turnOff() {
+            console.log(false);
+        }
+    }
+
+    let tiVi = new Tivi(3, 10, false);
+    console.log(tiVi);
+    let reMote = new Remote(5);
+    reMote.remoteOn(tiVi);
+    reMote.remoteConnectToTiVi(tiVi);
+    reMote.changeChannel(tiVi, 7);
+    reMote.changeVolume(tiVi, 2);
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1</title>
+</head>
+<body>
+<script>
+    let row = +prompt("Nhập số hàng");
+    let col = +prompt("Nhập số cột");
+    let arr = [];
+    let total = 0;
+    for (let i = 0; i < row; i++) {
+        arr[i] = [];
+        for (let j = 0; j < col; j++) {
+            let n = +prompt(`Nhập các phần tử hàng ${i} cột ${j}`);
+            arr[i].push(n);
+        }
+    }
+
+    function sum(ar) {
+        for (let i = 0; i < ar.length; i++) {
+            for (let j = 0; j < ar.length; j++) {
+                if (arr[i][j] % 2 === 0) {
+                    total += arr[i][j];
+                }
+            }
+        }
+        alert(total);
+    }
+
+    sum(arr);
+</script>
+</body>
+</html>

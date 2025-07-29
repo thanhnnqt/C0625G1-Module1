@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hệ thống quản lý học viên CODEGYM</title>
+</head>
+<body>
+<input type="button" id="add" value="Thêm mới học viên" onclick="action1.add(studentList)">
+<input type="button" id="edit" value="Sửa thông tin học viên" onclick="action1.edit(studentList)">
+<input type="button" id="del" value="Xóa học viên" onclick="action1.del(studentList)">
+<p id="display"></p>
+<script>
+    class Student {
+        #id;
+        #name;
+        #cla;
+        #email;
+        #date;
+        #module;
+
+        constructor(id, name, cla, email, date, module) {
+            this.#id = id;
+            this.#name = name;
+            this.#cla = cla;
+            this.#email = email;
+            this.#date = date;
+            this.#module = module;
+        }
+
+        getId() {
+            return this.#id;
+        }
+
+        getName() {
+            return this.#name;
+        }
+
+        getCla() {
+            return this.#cla;
+        }
+
+        getEmail() {
+            return this.#email;
+        }
+
+        getDate() {
+            return this.#date;
+        }
+
+        getModule() {
+            return this.#module;
+        }
+    }
+
+    class Action {
+        display() {
+            let table = `<table border="1"; style="border-collapse: collapse">`;
+            table += `<th>Mã học viên</th>`;
+            table += `<th>Tên</th>`;
+            table += `<th>Lớp</th>`;
+            table += `<th>Email</th>`;
+            table += `<th>Ngày sinh</th>`;
+            table += `<th>Module</th>`;
+            for (let i = 0; i < studentList.length; i++) {
+                table += `<tr>`;
+                table += `<td>${studentList[i].getId()}</td>`;
+                table += `<td>${studentList[i].getName()}</td>`;
+                table += `<td>${studentList[i].getCla()}</td>`;
+                table += `<td>${studentList[i].getEmail()}</td>`;
+                table += `<td>${studentList[i].getDate()}</td>`;
+                table += `<td>${studentList[i].getModule()}</td>`;
+            }
+            table += `</table>`;
+            document.getElementById("display").innerHTML = table;
+        }
+
+        add() {
+            let id = +prompt("Nhập id học viên");
+            let name = prompt("Nhập tên học viên");
+            let cla = prompt("Nhập tên lớp");
+            let email = prompt("Nhập email");
+            let date = prompt("Nhập ngày tháng năm sinh");
+            let module = prompt("Nhập module đang học");
+            studentList.push(new Student(id, name, cla, email, date, module));
+            this.display();
+        }
+
+        edit() {
+            let id = +prompt("Nhập id muốn sửa");
+            let check = true;
+            for (let i = 0; i < studentList.length; i++) {
+                if (studentList[i].getId() === id) {
+                    let name = prompt("Nhập tên học viên");
+                    let cla = prompt("Nhập tên lớp");
+                    let email = prompt("Nhập email");
+                    let date = prompt("Nhập ngày tháng năm sinh");
+                    let module = prompt("Nhập module đang học");
+                    studentList[i] = new Student(id, name, cla, email, date, module);
+                    check = true;
+                    break;
+                } else {
+                    check = false;
+                }
+            }
+            if (!check) {
+                alert("Mã học viên vừa nhập không đúng");
+            }
+            this.display();
+        }
+
+        del() {
+            let id = +prompt("Nhập id học viên cần xóa");
+            let check = true;
+            for (let i = 0; i < studentList.length; i++) {
+                if (studentList[i].getId() === id) {
+                    if (confirm("Bạn có chắc chắn xóa không")) {
+                        studentList.splice(i, 1);
+                        check = true;
+                    }
+                } else {
+                    check = false;
+                }
+            }
+            if (!check) {
+                alert("Mã học viên vừa nhập không đúng")
+            }
+            this.display();
+        }
+    }
+
+    let studentList = [new Student(101, "Nguyễn Văn A", "C0625G1", "nguyenvana@gmail.com", "01/01/2004", "Module 1"),
+        new Student(102, "Nguyễn Văn B", "C0625G1", "nguyenvanb@gmail.com", "02/02/2004", "Module 1")];
+    let action1 = new Action(studentList);
+    action1.display();
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 3</title>
+</head>
+<body>
+<script>
+    let a = 'aabccdc';
+    let b = 'adcaac';
+    let a1 = a.split("");
+    let b1 = b.split("");
+    let count = 0;
+    let max = a1.length;
+    if (a.length < b1.length) {
+        max = b1.length;
+    } else {
+        max = a1.length;
+    }
+    for (let i = 0; i < max; i++) {
+        if (a1.indexOf(b1[i]) !== -1) {
+            count++;
+            a1.splice(a1.indexOf(b1[i]), 1);
+            b1.splice(i, 1);
+            i--;
+        }
+    }
+    alert(count);
+</script>
+</body>
+</html>

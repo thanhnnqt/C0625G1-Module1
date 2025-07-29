@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1</title>
+</head>
+<body>
+<script>
+    let n;
+    let arr = [];
+    let total = 0;
+    do {
+        n = +prompt("Nhập số lượng phần tử n");
+    } while (n <= 0 && n > 50);
+    for (let i = 0; i < n; i++) {
+        let a = +prompt("Nhập các phần tử trong mảng");
+        arr.push(a);
+    }
+    for (let i = 2; i < arr.length; i++) {
+        let count = 0;
+        for (let j = 2; j < i; j++){
+            if (i % j === 0){
+                count++;
+            }
+        }
+        if (count === 0){
+            total += arr[i];
+        }
+    }
+    document.write(`Mảng vừa nhập là: ${arr} <br>`);
+    document.write(`Tổng các số tại vị trí index số nguyên tố là: ${total}`);
+</script>
+</body>
+</html>

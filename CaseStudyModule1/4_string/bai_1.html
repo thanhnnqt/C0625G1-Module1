@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1</title>
+</head>
+<body>
+<script>
+    function change(string) {
+        let arr = string.toLowerCase();
+        let array = arr.split("");
+        for (let i = 0; i < array.length; i++) {
+            if (array[i] === " " && array[i + 1] === " ") {
+                array.splice(i, 1);
+                i--;
+            }
+            array[0] = array[0].toUpperCase();
+            if (array[i] === " ") {
+                array[i + 1] = array[i + 1].toUpperCase();
+            }
+        }
+        alert(array.join(""));
+    }
+    function check(string){
+        let ar = string.split(" ");
+        let max = 0;
+        for (let i = 0; i < ar.length; i++) {
+            if (max < ar[i]) {
+                max = i;
+            }
+        }
+        alert(`Từ dài nhất là ${ar[max]}`)
+    }
+    let a = prompt("Nhập chuỗi cần thay đổi");
+    change(a);
+    check(a);
+</script>
+</body>
+</html>

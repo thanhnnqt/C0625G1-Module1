@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 3</title>
+</head>
+<body>
+<script>
+    let j = 0;
+    let a = 0;
+    let b = 1;
+    let arr1 = [];
+    let arr2 = [];
+    let arr3 = [];
+    let m = +prompt("Nhập số lượng phần tử");
+
+    function check(arr) {
+        while (j < Math.max(...arr1)) {
+            arr2.push(a);
+            let c = b + a;
+            a = b;
+            b = c;
+            j++;
+        }
+        for (let i = 0; i < arr.length; i++) {
+            if (arr2.includes(arr[i])) {
+                arr3.push(arr[i]);
+            }
+        }
+        arr3.sort(function (a, b) {
+            return a - b;
+        })
+        alert(`Chuỗi fibonaci trong mảng là: ${arr3}`);
+    }
+
+    for (let i = 0; i < m; i++) {
+        let x = +prompt("Nhập các phần tử trong mảng");
+        arr1.push(x);
+    }
+    check(arr1)
+</script>
+</body>
+</html>

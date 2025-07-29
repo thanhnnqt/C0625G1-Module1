@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Số nguyên tố</title>
+</head>
+<body>
+<script>
+    let total = 0;
+    let arr = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
+    let ar = [];
+    for (let i = 0; i < arr.length; i++) {
+        let count = 0;
+        for (let j = 2; j < arr[i]; j++) {
+            if (arr[i] % j === 0) {
+                count++;
+            }
+        }
+        if (count === 0) {
+            total += arr[i];
+            ar.push(arr[i]);
+        }
+    }
+    alert(ar);
+    alert(total);
+</script>
+</body>
+</html>

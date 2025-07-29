@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2</title>
+</head>
+<body>
+<script>
+    let arr = [];
+
+    function checkText(string) {
+        let up = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+        let dow = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+        let count1 = 0;
+        let count2 = 0;
+        for (let i = 0; i < string.length; i++) {
+            if (up.includes(string[i])) {
+                count1++;
+            }
+            if (dow.includes(string[i])) {
+                count2++;
+            }
+        }
+        return arr = [count1, count2];
+    }
+
+    checkText(prompt("Nhập chuỗi"));
+    alert(arr);
+</script>
+</body>
+</html>

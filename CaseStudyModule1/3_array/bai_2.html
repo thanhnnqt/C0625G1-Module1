@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2</title>
+</head>
+<body>
+<script>
+    let A = [7,2,5,3,5,3];
+    let B = [7,2,5,4,6,3,5,3,3];
+    let C = [];
+    for (let i = 0; i < A.length; i++) {
+        for (let j = 0; j < B.length; j++) {
+            let count = 0;
+            if (A.includes(B[j])) {
+                count++;
+            }
+            if (count === 0) {
+                if (C.includes(B[j])) {
+                } else {
+                    C.push(B[j]);
+                }
+            }
+        }
+    }
+    console.log(C);
+</script>
+</body>
+</html>

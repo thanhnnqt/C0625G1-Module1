@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let x = [];
+
+    function change(string) {
+        let ar = string.split("");
+        let arr = [];
+        if (ar.length === 1) {
+            alert("Chuỗi chỉ có 1 từ nên không cần viết tắt");
+        } else {
+            for (let i = 0; i < ar.length; i++) {
+                if (ar[i] === " " && ar[i + 1] === " ") {
+                    ar.splice(i, 1);
+                    i--;
+                }
+            }
+            for (let i = 0; i < ar.length; i++) {
+                if (ar[i] === " ") {
+                    x.push(i);
+                }
+            }
+            x.push(ar.length);
+            x.unshift(0);
+            for (let i = 0; i < x.length; i++) {
+                for (let j = x[i]; j < x[i + 1]; j++) {
+                    if (ar[j] >= "A" && ar[j] <= "Z" || ar[j] >= "a" && ar[j] <= "z") {
+                        arr.push(ar[j].toUpperCase());
+                        break;
+                    }
+                }
+            }
+            alert(ar);
+            alert(x);
+            alert(arr.join(""));
+        }
+    }
+
+    let a = prompt("Nhập chuỗi cần viết tắt");
+    change(a);
+</script>
+</body>
+</html>

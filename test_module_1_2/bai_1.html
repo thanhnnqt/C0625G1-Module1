@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1</title>
+</head>
+<body>
+<script>
+    let n;
+    let ar = [];
+    let count = 0;
+    do {
+        n = +prompt("Nhập số lượng phần tử của mảng");
+    } while (n % 3 !== 0 || n > 15);
+    for (let i = 0; i < n; i++) {
+        let a = +prompt("Nhập các phần tử trong mảng");
+        ar.push(a);
+    }
+    for (let i = 0; i < ar.length; i += 3) {
+        if ((ar[i] * ar[i] + ar[i + 1] * ar[i + 1]) === (ar[i + 2] * ar[i + 2])) {
+            count++;
+        }
+    }
+    if (count === ar.length / 3) {
+        alert("OK");
+    } else {
+        alert("NO");
+    }
+</script>
+</body>
+</html>

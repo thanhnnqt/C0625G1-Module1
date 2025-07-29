@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2</title>
+</head>
+<body>
+<script>
+    function change(string) {
+        let ar = string.split("");
+        let arr = [];
+        if (ar.length === 1) {
+            alert("Chuỗi chỉ có 1 từ nên không cần viết tắt");
+        } else {
+            arr.push(ar[0].toUpperCase());
+            for (let i = 0; i < ar.length; i++) {
+                if (ar[i] === " " && ar[i + 1] !== " ") {
+                    arr.push(ar[i + 1].toUpperCase());
+                }
+            }
+            alert(arr.join(""));
+        }
+    }
+
+    let a = prompt("Nhập chuỗi cần viết tắt");
+    change(a);
+</script>
+</body>
+</html>

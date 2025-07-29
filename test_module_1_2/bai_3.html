@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 4</title>
+</head>
+<body>
+<script>
+    let a = [];
+    let n = +prompt("Nhập độ dài mảng");
+    for (let i = 0; i < n; i++) {
+        let x = +prompt("Nhập các phần tử");
+        a.push(x);
+    }
+
+    function check(ar) {
+        let array = [];
+        let arr = [];
+        for (let i = 0; i < ar.length; i++) {
+            if (ar[i] + ar[i + 1] === ar[i + 2]) {
+                arr[i] = [ar[i], ar[i + 1]];
+                array.push(arr[i]);
+            }
+        }
+        array.sort(function (a, b) {
+            return ((a[0] + a[1]) - (b[0] + b[1]));
+        })
+        alert(array);
+        console.log(array);
+    }
+
+    check(a);
+</script>
+</body>
+</html>

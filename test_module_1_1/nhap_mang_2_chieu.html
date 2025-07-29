@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mảng 2 chiều</title>
+</head>
+<body>
+<script>
+  let row = +prompt("Nhập số hàng");
+  let col = +prompt("Nhập số cột");
+  let arr = [];
+  for (let i = 0; i < row; i++) {
+    arr[i] = [];
+    for (let j = 0; j < col; j++) {
+      let n = +prompt(`Nhập các phần tử hàng ${i} cột ${j}`);
+      arr[i].push(n);
+    }
+  }
+  alert(arr);
+</script>
+</body>
+</html>

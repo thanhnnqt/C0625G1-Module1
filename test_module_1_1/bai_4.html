@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 4</title>
+</head>
+<body>
+<p id="display"></p>
+<input type="button" id="add" value="Thêm sản phẩm" onclick="action.add(computerList)">
+<input type="button" id="edit" value="Sắp xếp sản phẩm" onclick="action.edit(computerList)">
+<script>
+    class Computer {
+        #id;
+        #name;
+        #nsx;
+        #fee;
+
+        constructor(id, name, nsx, fee) {
+            this.#id = id;
+            this.#name = name;
+            this.#nsx = nsx;
+            this.#fee = fee;
+        }
+
+        getId() {
+            return this.#id;
+        }
+
+        getName() {
+            return this.#name;
+        }
+
+        getNSX() {
+            return this.#nsx;
+        }
+
+        getFee() {
+            return this.#fee;
+        }
+
+        setId(id) {
+            this.#id = id;
+        }
+
+        setName(name) {
+            this.#name = name;
+        }
+
+        setNSX(nsx) {
+            this.#nsx = nsx;
+        }
+
+        setFee(fee) {
+            this.#fee = fee;
+        }
+    }
+
+    class Action {
+        display() {
+            let table = `<table border="1"; style="border-collapse: collapse">`;
+            table += `<th>Mã máy</th>`;
+            table += `<th>Tên máy</th>`;
+            table += `<th>Tên hãng sản xuất</th>`;
+            table += `<th>Giá bán</th>`;
+            for (let i = 0; i < computerList.length; i++) {
+                table += `<tr>`;
+                table += `<td>${computerList[i].getId()}</td>`;
+                table += `<td>${computerList[i].getName()}</td>`;
+                table += `<td>${computerList[i].getNSX()}</td>`;
+                table += `<td>${computerList[i].getFee()} triệu VND</td>`;
+            }
+            table += `</table>`;
+            document.getElementById("display").innerHTML = table;
+        }
+
+        add() {
+            let id = prompt("Nhập id");
+            let name = prompt("Nhập tên");
+            let nsx = prompt("Nhập tên hãng sản xuất");
+            let fee = +prompt("Nhập giá bán");
+            computerList.push(new Computer(id, name, nsx, fee));
+            this.display();
+        }
+
+        edit(list) {
+            list.sort(function (a, b) {
+                return a.getFee() - b.getFee()
+            });
+            this.display();
+        }
+    }
+
+    let computerList = [new Computer("101", "Dell", "China", 20)];
+    let action = new Action(computerList);
+    action.display();
+</script>
+</body>
+</html>

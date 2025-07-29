@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1</title>
+</head>
+<body>
+<script>
+    let wage = +prompt("Nhập tiền lương");
+    let tax = 0;
+    if (wage >= 15) {
+        tax = wage * 20 / 100;
+    } else if (wage >= 7) {
+        tax = wage * 10 / 100;
+    }else {
+        tax = wage * 5 / 100;
+    }
+    alert(`Thuế phải đóng với lương ${wage} là ${tax} triệu VND`);
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dãy fibonaci</title>
+</head>
+<body>
+<script>
+    let j = 0;
+    let a = 0;
+    let b = 1;
+    let arr = [];
+    let m = +prompt("Nhập số lượng phần tử");
+    while (j < m) {
+        arr.push(a);
+        let c = b + a;
+        a = b;
+        b = c;
+        j++;
+    }
+    alert(arr);
+</script>
+</body>
+</html>
